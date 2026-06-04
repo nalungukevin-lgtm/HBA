@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Henrison Basketball Academy — Built in Uganda. Built to rise.</title>
+<meta name="description" content="Henrison Basketball Academy (HBA) — an elite youth basketball academy in Kampala, Uganda. Year-round development, programs, camps and tryouts. Discipline · Skill · Brotherhood · Academics." />
+<link rel="canonical" href="https://hba.ug/" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Henrison Basketball Academy" />
+<meta property="og:title" content="Henrison Basketball Academy — Built to rise." />
+<meta property="og:description" content="Elite year-round basketball development for the next generation in Kampala, Uganda." />
+<meta property="og:image" content="https://hba.ug/assets/summer-camp-26.jpg" />
+<meta property="og:url" content="https://hba.ug/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- favicon -->
+<link rel="icon" type="image/png" href="assets/hba-logo.png" />
+<link rel="apple-touch-icon" href="assets/hba-logo.png" />
+
+<meta name="theme-color" content="#08090C" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="hba.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== atmospheric ground ===== -->
+<div class="ground" aria-hidden="true">
+  <div class="grid"></div>
+  <div class="vig"></div>
+  <div class="grain"></div>
+</div>
+
+<!-- ===== full-viewport 3D stage (ball + backboard) — root-level so it can layer over the content ===== -->
+<div class="hero-ball" id="hero-ball" aria-hidden="true">
+  <canvas id="ball-canvas"></canvas>
+  <div class="ball-reflect"></div>
+</div>
+
+<!-- ===== sticky top nav (morphs in on scroll) ===== -->
+<header class="topnav" id="topnav">
+  <a href="#hero" class="tn-brand">
+    <img src="assets/hba-logo.png" alt="HBA" />
+    <span>Henrison Basketball Academy</span>
+  </a>
+  <nav class="tn-links">
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#events">Events</a>
+    <a href="#roster">Roster</a>
+    <a href="#social">Social</a>
+    <a href="#join" class="tn-pill">Tryouts</a>
+  </nav>
+</header>
+
+<!-- ===== HERO (pinned scroll runway) ===== -->
+<div class="hero-runway" id="hero-runway">
+<section class="hero" id="hero" data-screen-label="01 Hero">
+
+  <!-- blueprint rulers -->
+  <div class="rulers" aria-hidden="true">
+    <span style="left:14%">1</span><span style="left:28%">2</span><span style="left:42%">3</span>
+    <span style="left:56%">4</span><span style="left:70%">5</span><span style="left:84%">6</span>
+    <span class="row" style="top:30%">7</span>
+  </div>
+
+  <!-- crosshair accents -->
+  <span class="plus" style="top:22%;left:9%"></span>
+  <span class="plus acc" style="top:30%;right:11%"></span>
+  <span class="plus" style="top:78%;left:18%"></span>
+  <span class="plus" style="top:82%;right:16%"></span>
+
+  <!-- neon wordmark -->
+  <div class="wordmark" aria-hidden="true">
+    <span>N</span><span class="neon-o">X</span><span>T</span><span class="wm-gap"></span><span>G</span><span class="neon-c">E</span><span class="neon-c">N</span>
+  </div>
+
+  <div class="wrap">
+    <!-- unified glass dashboard -->
+    <div class="dash-shell">
+    <div class="dash stagger d1">
+
+      <div class="dash-top">
+        <a href="#hero" class="dash-brand">
+          <img class="dash-logo" src="assets/hba-logo.png" alt="Henrison Basketball Academy" />
+          <span class="dash-brand-txt">Henrison Basketball Academy<b>Kampala, Uganda</b></span>
+        </a>
+        <nav class="dash-nav">
+          <a href="#about">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#events">Events</a>
+          <a href="#roster">Roster</a>
+          <a href="#social">Social</a>
+          <a href="#join" class="pill">Tryouts</a>
+        </nav>
+      </div>
+
+      <div class="dash-body">
+        <div class="dash-main">
+          <span class="kicker">Henrison Basketball Academy · Kampala, UG</span>
+          <h1>Built in Uganda.<br/>Built to <span class="em">rise.</span></h1>
+          <p class="lead">
+            Elite year-round development for the next generation of African basketball —
+            from first dribbles to scholarship floors. No shortcuts. Just the work,
+            measured every session.
+          </p>
+          <div class="cta-row">
+            <a href="#join" class="btn btn-primary">Join the Academy <span class="arrow">→</span></a>
+            <a href="#roster" class="btn btn-ghost"><span class="play"></span>Watch the Tape</a>
+          </div>
+          <div class="dash-trust">
+            Est. 2020 &nbsp;·&nbsp; <span class="countup" data-to="200">0</span>+ Players Trained &nbsp;·&nbsp; <span class="countup" data-to="12">0</span> National Call-ups
+          </div>
+        </div>
+
+        <div class="dash-side">
+
+          <div class="badge badge-recruits">
+            <div class="b-label">Recruits · college pipeline</div>
+            <div class="rec">
+              <div class="avs">
+                <span class="av">DM</span><span class="av">AK</span><span class="av">JN</span><span class="av more">+9</span>
+              </div>
+              <div class="rec-n"><span class="big">12</span> Active Recruits</div>
+            </div>
+          </div>
+
+          <div class="badge badge-metric">
+            <div class="b-label">Training load <span class="live">Live</span></div>
+            <div class="bars">
+              <div class="bar" style="height:48%"></div>
+              <div class="bar" style="height:70%"></div>
+              <div class="bar cy" style="height:56%"></div>
+              <div class="bar" style="height:84%"></div>
+              <div class="bar cy" style="height:66%"></div>
+              <div class="bar" style="height:92%"></div>
+              <div class="bar cy" style="height:100%"></div>
+            </div>
+            <div class="bm-days"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span></div>
+          </div>
+
+          <div class="dash-side-row">
+            <div class="badge badge-trend">
+              <div class="b-label">Vertical leap</div>
+              <div class="trend-row">
+                <svg class="spark" viewBox="0 0 120 40" preserveAspectRatio="none">
+                  <path class="spark-line" d="M2,34 L22,30 L42,32 L62,22 L82,16 L102,8 L118,3"/>
+                  <circle class="dot-end" cx="118" cy="3" r="3.5"/>
+                </svg>
+                <div class="trend-pct"><span class="up">▲</span><span class="countup" data-to="42">0</span>%</div>
+              </div>
+              <div class="b-sub">Avg. increase per season</div>
+            </div>
+
+            <div class="badge badge-big">
+              <div class="big-num"><span class="countup" data-to="92">0</span><span class="pct">%</span></div>
+              <div class="b-sub">collegiate success</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+</div><!-- /hero-runway -->
+
+<!-- ===== MARQUEE BAND ===== -->
+<div class="band">
+  <div class="band-track">
+    <span class="it">Discipline <span class="s"></span> <span class="mut">Skill</span> <span class="s"></span> Brotherhood <span class="s"></span> <span class="mut">Academics</span> <span class="s"></span> Discipline <span class="s"></span> <span class="mut">Skill</span> <span class="s"></span> Brotherhood <span class="s"></span> <span class="mut">Academics</span> <span class="s"></span> </span>
+    <span class="it">Discipline <span class="s"></span> <span class="mut">Skill</span> <span class="s"></span> Brotherhood <span class="s"></span> <span class="mut">Academics</span> <span class="s"></span> Discipline <span class="s"></span> <span class="mut">Skill</span> <span class="s"></span> Brotherhood <span class="s"></span> <span class="mut">Academics</span> <span class="s"></span> </span>
+  </div>
+</div>
+
+<!-- ===== HOT / CURRENT EVENT ===== -->
+<section class="hot" id="hot" data-screen-label="02 Hot">
+  <div class="wrap">
+    <div class="hot-card glass" data-reveal>
+      <div class="hot-media">
+        <img class="hot-img" src="assets/summer-camp-26.jpg" alt="HBA Summer Camp 2026" />
+        <span class="hot-flag"><span class="pulse-dot"></span>Hot Right Now</span>
+      </div>
+      <div class="hot-body">
+        <span class="kicker">Registration Open · 2026</span>
+        <h2>Summer Camp <span class="acc">’26</span></h2>
+        <p>Three weeks of elite development — skills, strength, film study and live runs — for every level. Guest coaches, daily contests and a final-day showcase in front of scouts. Spots are limited.</p>
+        <div class="hot-meta">
+          <div><span class="k">Dates</span><span class="v">Aug 3–21, 2026</span></div>
+          <div><span class="k">Venue</span><span class="v">HBA Court, Kampala</span></div>
+          <div><span class="k">Ages</span><span class="v">7 – 18</span></div>
+        </div>
+        <div class="hot-actions">
+          <button class="btn btn-primary" data-register="Summer Camp '26">Register Now →</button>
+          <a class="btn btn-ghost" href="#events"><span class="play"></span>See all events</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / FOUNDATION ===== -->
+<section class="about" id="about" data-screen-label="03 About">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <span class="kicker" data-reveal>Who We Are</span>
+        <h2 data-reveal>More than<br/>the <span class="acc">game.</span></h2>
+      </div>
+      <div class="right" data-reveal>
+        <div class="idx">03 — FOUNDATION</div>
+        A platform built to nurture future leaders — using sport to build character, community, and a pathway to play.
+      </div>
+    </div>
+
+    <!-- Vision + Mission -->
+    <div class="vm-grid">
+      <article class="glass vm" data-reveal>
+        <span class="fnum">F / 01</span>
+        <h3>Vision</h3>
+        <p>To develop youth leadership skills and a community through organized sports and competition.</p>
+      </article>
+      <article class="glass vm" data-reveal style="transition-delay:.1s">
+        <span class="fnum">F / 02</span>
+        <h3>Mission</h3>
+        <p>To jump-start youth's interest in the game of basketball by encouraging them with a fun event that supports future basketball coaches, mentors, and opportunities for youth to play.</p>
+      </article>
+    </div>
+
+    <!-- How -->
+    <article class="glass how-panel" data-reveal>
+      <div class="hp-head">
+        <span class="fnum">F / 03</span>
+        <h3>How</h3>
+      </div>
+      <div class="how-body">
+        <p>We believe that organized sports competition allows young people to develop and gain skills that are invaluable in life. By being part of a program that imparts discipline, team comradery, communication skills, and both behavioral and physical tools to support improved basketball competition, young people can better prepare themselves for the future.</p>
+        <p>Our team of coaches, mentors, and volunteers will teach the fundamental building blocks of <span class="hl">working in teams</span>, <span class="hl">communicating needs</span>, <span class="hl">growing mental stability</span> through toughness and versatility, and <span class="hl">fundamental basketball skills</span> to youth.</p>
+      </div>
+    </article>
+
+    <!-- About / founder -->
+    <div class="founder" data-reveal>
+      <div class="glass founder-text">
+        <span class="fnum">F / 04 — About</span>
+        <p>HBA Basketball Academy is a platform created to nurture and develop future leaders by using sports as an avenue to build strong character and community. As part of this development, HBA scouts for top talent to participate in professional basketball leagues and national teams. Our aim is to impact the next generation — not only by improving their basketball fundamentals, but the fundamentals in life.</p>
+        <p>HBA Basketball Academy was started by <b>Henry <span class="ph">[last name]</span></b>. Henry is an avid basketball player in Uganda, has played for <span class="ph">[club]</span>, and is focused on supporting the sport through his endeavors. Henry studied at <span class="ph">[university]</span> and holds a <span class="ph">[degree]</span> in <span class="ph">[field]</span>. He is building and developing his organization, and is seeking support to establish a proper board governance structure to drive the growth of basketball in Uganda.</p>
+      </div>
+      <div class="founder-photo">
+        <!-- TODO: replace this placeholder with a real photo:
+             <img src="assets/founder-henry.jpg" alt="Henry — Founder of HBA" style="width:100%;height:100%;object-fit:cover" /> -->
+        <div class="img-ph" id="v4-founder">
+          <span class="ph-title">Founder portrait</span>
+          <span class="ph-sub">Add Henry's photo · assets/founder-henry.jpg</span>
+        </div>
+        <div class="fp-cap"><b>Henry <span class="ph">[last name]</span></b><span>Founder · Henrison Basketball Academy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAMS ===== -->
+<section class="programs" id="programs" data-screen-label="04 Programs">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <span class="kicker" data-reveal>The Tracks</span>
+        <h2 data-reveal>Three lanes.<br/>One <span class="acc">standard.</span></h2>
+      </div>
+      <div class="right" data-reveal>
+        <div class="idx">02 — PROGRAMS</div>
+        From the kid picking up a ball for the first time to the senior chasing a college floor — there's a lane built for them.
+      </div>
+    </div>
+
+    <div class="prog-grid">
+      <article class="glass prog" data-reveal>
+        <div>
+          <div class="ptop"><div class="picon">L</div><span class="pnum">P / 01</span></div>
+          <h3>Little Ballers</h3>
+          <div class="age">Ages 7–12 · Lower School</div>
+          <p>First dribbles, first layups. Foundation footwork and ball-handling built through games, not drills. Twice weekly.</p>
+        </div>
+        <div class="pfoot"><span class="price">UGX 180k / mo</span><span class="go">Enroll →</span></div>
+      </article>
+
+      <article class="glass prog" data-reveal style="transition-delay:.1s">
+        <div>
+          <div class="ptop"><div class="picon">E</div><span class="pnum">P / 02</span></div>
+          <h3>High-School Elite</h3>
+          <div class="age">Ages 13–18 · Competitive</div>
+          <p>Five sessions a week. Strength, IQ, film review and live-game reps for players chasing national squads and scholarships.</p>
+        </div>
+        <div class="pfoot"><span class="price">By tryout</span><span class="go">Apply →</span></div>
+      </article>
+
+      <article class="glass prog" data-reveal style="transition-delay:.2s">
+        <div>
+          <div class="ptop"><div class="picon">W</div><span class="pnum">P / 03</span></div>
+          <h3>Weekend Clinics</h3>
+          <div class="age">All Ages · Saturdays</div>
+          <p>Drop-in Saturday clinics open to any kid who wants to hoop. Mixed-age groups, guest coaches, weekly scrimmages.</p>
+        </div>
+        <div class="pfoot"><span class="price">UGX 25k / session</span><span class="go">Walk in →</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUES ===== -->
+<section class="values" id="values" data-screen-label="03 Method">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <span class="kicker" data-reveal>The Method</span>
+        <h2 data-reveal>Four pillars.<br/><span class="acc">Non-negotiable.</span></h2>
+      </div>
+      <div class="right" data-reveal>
+        <div class="idx">03 — METHOD</div>
+        Every player, every session, every year. This is the floor we build on — before a single shot goes up.
+      </div>
+    </div>
+
+    <div class="val-grid" data-reveal>
+      <span class="plus acc" style="top:-7px;left:25%"></span>
+      <span class="plus" style="top:-7px;left:50%"></span>
+      <span class="plus" style="top:-7px;left:75%"></span>
+
+      <div class="vcell">
+        <span class="vnum">V / 01</span>
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L4 7 V13 C4 17 8 21 12 22 C16 21 20 17 20 13 V7 Z"/></svg></div>
+        <div><h3>Discipline</h3><p>On time. Eyes up. Earn your spot. No exceptions — that's the baseline.</p></div>
+      </div>
+      <div class="vcell">
+        <span class="vnum">V / 02</span>
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12 H21 M12 3 C16 8 16 16 12 21 M12 3 C8 8 8 16 12 21"/></svg></div>
+        <div><h3>Skill</h3><p>Fundamentals before flash. Reps before reels. Mastery is the only currency.</p></div>
+      </div>
+      <div class="vcell">
+        <span class="vnum">V / 03</span>
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19 C3 15 6 13 9 13 S15 15 15 19 M15 19 C15 16 18 14 20 14 S22 16 22 19"/></svg></div>
+        <div><h3>Brotherhood</h3><p>The team eats first. Lift the kid beside you. No stars — just a roster.</p></div>
+      </div>
+      <div class="vcell">
+        <span class="vnum">V / 04</span>
+        <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5 H20 V18 H4 Z"/><path d="M8 9 H16 M8 13 H14"/><path d="M2 21 H22"/></svg></div>
+        <div><h3>Academics</h3><p>No grades, no game. Study halls, tutor partners, report cards we read.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROSTER ===== -->
+<section class="roster" id="roster" data-screen-label="04 Roster">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <span class="kicker" data-reveal>The Roster</span>
+        <h2 data-reveal>Players to <span class="acc">watch.</span><br/>Season 06.</h2>
+      </div>
+      <div class="right" data-reveal>
+        <div class="idx">04 — PROSPECTS</div>
+        Three names you should know. Already on the floor, already raising the bar for the room.
+      </div>
+    </div>
+
+    <div class="ros-grid">
+      <article class="player" data-reveal>
+        <div class="pbg" aria-hidden="true">23</div>
+        <!-- TODO: drop a cut-out PNG into assets/ and swap to <img class="pfig-img" src="assets/player-musoke.png" alt="Daniel Musoke" /> -->
+        <div class="pfig"><div class="img-ph img-ph--player"><span class="ph-sub">Player cut-out PNG</span></div></div>
+        <div class="pscrim"></div>
+        <span class="ptag">U-18 National</span>
+        <div class="pjersey"><small>№</small>23</div>
+        <div class="pbody">
+          <div class="pname">Daniel Musoke</div>
+          <div class="ppos">PG · 6'1" · 17 yrs</div>
+          <div class="pstats">
+            <div class="pstat"><div class="v">19.4</div><div class="k">PPG</div></div>
+            <div class="pstat"><div class="v cy">+38%</div><div class="k">Vert</div></div>
+            <div class="pstat"><div class="v">3yr</div><div class="k">At HBA</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-reveal style="transition-delay:.1s">
+        <div class="pbg" aria-hidden="true">07</div>
+        <div class="pfig"><div class="img-ph img-ph--player"><span class="ph-sub">Player cut-out PNG</span></div></div>
+        <div class="pscrim"></div>
+        <span class="ptag">Scholarship Track</span>
+        <div class="pjersey"><small>№</small>07</div>
+        <div class="pbody">
+          <div class="pname">Aisha Akello</div>
+          <div class="ppos">SF · 6'0" · 16 yrs</div>
+          <div class="pstats">
+            <div class="pstat"><div class="v">14.1</div><div class="k">PPG</div></div>
+            <div class="pstat"><div class="v cy">+46%</div><div class="k">Vert</div></div>
+            <div class="pstat"><div class="v">2yr</div><div class="k">At HBA</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="player" data-reveal style="transition-delay:.2s">
+        <div class="pbg" aria-hidden="true">11</div>
+        <div class="pfig"><div class="img-ph img-ph--player"><span class="ph-sub">Player cut-out PNG</span></div></div>
+        <div class="pscrim"></div>
+        <span class="ptag">Rising Star</span>
+        <div class="pjersey"><small>№</small>11</div>
+        <div class="pbody">
+          <div class="pname">Joel Okello</div>
+          <div class="ppos">C · 6'8" · 17 yrs</div>
+          <div class="pstats">
+            <div class="pstat"><div class="v">12.7</div><div class="k">RPG</div></div>
+            <div class="pstat"><div class="v cy">+41%</div><div class="k">Vert</div></div>
+            <div class="pstat"><div class="v">4yr</div><div class="k">At HBA</div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTS ===== -->
+<section class="events" id="events" data-screen-label="05 Events">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <span class="kicker" data-reveal>The Calendar</span>
+        <h2 data-reveal>Upcoming <span class="acc">events.</span></h2>
+      </div>
+      <div class="right" data-reveal>
+        <div class="idx">05 — EVENTS</div>
+        Camps, showcases and clinics — open for registration. Lock your spot early; they fill fast.
+      </div>
+    </div>
+
+    <div class="ev-grid">
+      <article class="glass ev" data-reveal>
+        <div class="ev-date"><span class="d">14</span><span class="m">Jun</span></div>
+        <div class="ev-info">
+          <span class="ev-tag">Showcase</span>
+          <h3>Kampala Summer Showcase</h3>
+          <p>Top prospects vs regional scouts. Two days, eight teams, live stats.</p>
+          <div class="ev-meta"><span class="k">Venue</span> MTN Arena <span class="dotsep"></span> <span class="k">Entry</span> Free</div>
+        </div>
+        <div class="ev-foot"><span class="ev-spots"><b>42</b> spots left</span><button class="btn btn-primary ev-reg" data-register="Kampala Summer Showcase">Register →</button></div>
+      </article>
+
+      <article class="glass ev" data-reveal style="transition-delay:.08s">
+        <div class="ev-date"><span class="d">05</span><span class="m">Jul</span></div>
+        <div class="ev-info">
+          <span class="ev-tag">Elite Camp</span>
+          <h3>Elite ID Camp</h3>
+          <p>Five-day intensive for the high-school track. Strength, IQ, film, live reps.</p>
+          <div class="ev-meta"><span class="k">Venue</span> HBA Court <span class="dotsep"></span> <span class="k">Fee</span> UGX 120k</div>
+        </div>
+        <div class="ev-foot"><span class="ev-spots"><b>18</b> spots left</span><button class="btn btn-primary ev-reg" data-register="Elite ID Camp">Register →</button></div>
+      </article>
+
+      <article class="glass ev" data-reveal style="transition-delay:.16s">
+        <div class="ev-date"><span class="d">19</span><span class="m">Jul</span></div>
+        <div class="ev-info">
+          <span class="ev-tag">Clinic</span>
+          <h3>Lower-School Clinic</h3>
+          <p>A fun Saturday of fundamentals for ages 7–12. Bring water and energy.</p>
+          <div class="ev-meta"><span class="k">Venue</span> HBA Court <span class="dotsep"></span> <span class="k">Fee</span> UGX 25k</div>
+        </div>
+        <div class="ev-foot"><span class="ev-spots"><b>60</b> spots left</span><button class="btn btn-primary ev-reg" data-register="Lower-School Clinic">Register →</button></div>
+      </article>
+
+      <article class="glass ev" data-reveal style="transition-delay:.24s">
+        <div class="ev-date"><span class="d">02</span><span class="m">Aug</span></div>
+        <div class="ev-info">
+          <span class="ev-tag">Combine</span>
+          <h3>Regional Combine</h3>
+          <p>Measured testing day — vertical, sprint, agility. Scouts on the floor.</p>
+          <div class="ev-meta"><span class="k">Venue</span> MTN Arena <span class="dotsep"></span> <span class="k">Entry</span> By invite</div>
+        </div>
+        <div class="ev-foot"><span class="ev-spots"><b>Waitlist</b></span><button class="btn btn-primary ev-reg" data-register="Regional Combine">Join list →</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOCIAL ===== -->
+<section class="social" id="social" data-screen-label="06 Social">
+  <div class="wrap">
+    <div class="social-card glass" data-reveal>
+      <div class="social-head">
+        <span class="kicker">Follow the journey</span>
+        <h2>Catch us <span class="acc">everywhere.</span></h2>
+        <p>Highlights, full games, behind-the-scenes and live drops — across every feed.</p>
+      </div>
+      <div class="social-grid">
+        <a class="soc yt" href="https://youtube.com/@henrisonhba" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></span>
+          <span class="soc-txt"><b>YouTube</b><small>Full games &amp; highlights</small></span><span class="soc-go">→</span>
+        </a>
+        <a class="soc tt" href="https://tiktok.com/@henrisonhba" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.2 1.6 3.7 3.8 3.9v2.5c-1.3.1-2.5-.3-3.8-1v5.8c0 3.3-2.4 5.8-5.6 5.8A5.5 5.5 0 0 1 5 14.5 5.4 5.4 0 0 1 11 9.3v2.6a2.8 2.8 0 0 0-3 2.6 2.7 2.7 0 0 0 2.7 2.7c1.6 0 2.7-1.2 2.7-2.9V3z"/></svg></span>
+          <span class="soc-txt"><b>TikTok</b><small>Clips &amp; trends</small></span><span class="soc-go">→</span>
+        </a>
+        <a class="soc ig" href="https://instagram.com/henrison.hba" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+          <span class="soc-txt"><b>Instagram</b><small>@henrison.hba</small></span><span class="soc-go">→</span>
+        </a>
+        <a class="soc fb" href="https://facebook.com/henrisonhba" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></span>
+          <span class="soc-txt"><b>Facebook</b><small>Henrison Basketball</small></span><span class="soc-go">→</span>
+        </a>
+        <a class="soc wa" href="https://wa.me/256700000000" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4s0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.9 2.9 0 0 0 5 9.9c0 1.7 1.2 3.3 1.4 3.5s2.4 3.7 5.8 5.1c2.9 1.1 2.9.8 3.4.7s1.4-.6 1.6-1.1.2-1 .1-1.1z"/></svg></span>
+          <span class="soc-txt"><b>WhatsApp</b><small>Chat with us</small></span><span class="soc-go">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="join" data-screen-label="05 Join">
+  <div class="wrap">
+    <div class="cta-card" data-reveal>
+      <span class="kicker">Tryouts · Season 07</span>
+      <h2>Come <span class="acc">rise</span><br/>with <span class="stroke">us.</span></h2>
+      <p>Drop your email and our staff will reach out with tryout dates, locations, and what to bring. Walk in a kid. Walk out a finisher.</p>
+      <form class="cta-form" id="cta-form">
+        <input type="email" name="email" placeholder="your@email.com" aria-label="Email" required />
+        <button class="btn btn-primary" type="submit">Request Tryout →</button>
+      </form>
+      <div class="cta-done" id="cta-done" hidden>✓ Thanks — we'll be in touch with tryout details shortly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer data-screen-label="06 Footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="foot-logo" src="assets/hba-logo.png" alt="HBA — Henrison Basketball Academy" />
+        <p>A youth basketball academy in Kampala, Uganda — forging discipline, skill and brotherhood since 2020.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <a href="#programs">Little Ballers</a>
+        <a href="#programs">High-School Elite</a>
+        <a href="#programs">Weekend Clinics</a>
+      </div>
+      <div class="foot-col">
+        <h4>Academy</h4>
+        <a href="#values">Our Method</a>
+        <a href="#events">Events</a>
+        <a href="#roster">The Roster</a>
+        <a href="#join">Tryouts</a>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <a href="https://instagram.com/henrison.hba" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@henrisonhba" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://wa.me/256700000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:hello@hba.ug">hello@hba.ug</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Henrison Basketball Academy</span>
+      <span>00°18′49″N · Kampala · Season 06 / Live</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Register modal ===== -->
+<div class="modal-overlay" id="reg-modal" hidden>
+  <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="reg-title">
+    <button class="modal-x" id="reg-close" aria-label="Close">×</button>
+    <span class="kicker">Event Registration</span>
+    <h3 id="reg-title">Register</h3>
+    <p class="modal-sub">Reserve your spot — we'll confirm by email and WhatsApp.</p>
+    <form id="reg-form" class="reg-form">
+      <input name="athlete" placeholder="Athlete full name" required />
+      <div class="reg-row">
+        <select name="agegroup" required>
+          <option value="" disabled selected>Athlete age group</option>
+          <option>Ages 7–9</option>
+          <option>Ages 10–12</option>
+          <option>Ages 13–15</option>
+          <option>Ages 16–18</option>
+        </select>
+        <input name="phone" placeholder="WhatsApp number" />
+      </div>
+      <input name="guardian" placeholder="Parent / guardian name" required />
+      <input name="email" type="email" placeholder="Contact email" required />
+      <button class="btn btn-primary" type="submit">Confirm registration →</button>
+    </form>
+    <div class="reg-done" id="reg-done" hidden>✓ You're in! Check your inbox for confirmation.</div>
+  </div>
+</div>
+
+<!-- ===== 3D basketball (three.js r128 + OBJLoader via CDN) ===== -->
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+<script src="ball.js"></script>
+
+<!-- ===== site behavior (reveal, count-ups, scroll choreography, modal, forms) ===== -->
+<script src="app.js"></script>
+
+</body>
+</html>
