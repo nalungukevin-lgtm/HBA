@@ -847,7 +847,7 @@ body.flat .dash,body.flat .badge{backdrop-filter:none;-webkit-backdrop-filter:no
 .soc.ig:hover .soc-ic{color:#E1306C}
 .soc.fb:hover .soc-ic{color:#4267F2}
 .soc.wa:hover .soc-ic{color:#25D366}
-.social-grid .soc.wa{grid-column:1 / -1}
+/* wa tile is normal width now that there are 4 tiles (2x2) */
 
 /* ---- Register modal ---- */
 .modal-overlay{position:fixed;inset:0;z-index:9500;display:grid;place-items:center;padding:24px;
