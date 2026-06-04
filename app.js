@@ -14,6 +14,12 @@
   var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (REDUCE) document.body.classList.add('no-motion');
 
+  /* HBA WhatsApp number (international format, no + or spaces) — sign-ups land here */
+  var HBA_WA = '256772757596';
+  function waLink(message) {
+    return 'https://wa.me/' + HBA_WA + '?text=' + encodeURIComponent(message);
+  }
+
   /* ---- scroll reveal ---- */
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -112,18 +118,30 @@
       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
-    // TODO(backend): POST to your CRM / email service here. Currently inline-success only.
+    // On submit, hand off to WhatsApp with the details pre-typed to the HBA number.
     regForm.addEventListener('submit', function (e) {
-      e.preventDefault(); regForm.hidden = true; regDone.hidden = false;
+      e.preventDefault();
+      var d = new FormData(regForm);
+      var msg =
+        "Hi HBA! I'd like to register for: " + (regTitle.textContent || 'an event') + ".\n" +
+        "Athlete: " + (d.get('athlete') || '') + "\n" +
+        "Age group: " + (d.get('agegroup') || '') + "\n" +
+        "Guardian: " + (d.get('guardian') || '') + "\n" +
+        "Email: " + (d.get('email') || '') + "\n" +
+        "WhatsApp: " + (d.get('phone') || '');
+      window.open(waLink(msg), '_blank', 'noopener');
+      regForm.hidden = true; regDone.hidden = false;
     });
   }
 
   /* ---- tryout (CTA) form ---- */
   var ctaForm = document.getElementById('cta-form');
   if (ctaForm) {
-    // TODO(backend): wire to your email service / CRM. Currently inline-success only.
     ctaForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      var email = (new FormData(ctaForm).get('email')) || '';
+      var msg = "Hi HBA! I'd like to request a tryout.\nMy email: " + email;
+      window.open(waLink(msg), '_blank', 'noopener');
       var done = document.getElementById('cta-done');
       ctaForm.hidden = true; if (done) done.hidden = false;
     });

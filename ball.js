@@ -87,7 +87,17 @@
   else window.addEventListener('load', function(){ setTimeout(deferBoard,500); });
 
   // ---- helpers ----
-  function resize(){ renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2)); renderer.setSize(window.innerWidth,window.innerHeight,false); camera.aspect=window.innerWidth/window.innerHeight; camera.updateProjectionMatrix();
+  var lastW=0, lastH=0;
+  function resize(){
+    // Size from the canvas's ACTUAL displayed box (clientWidth/Height), not window.innerWidth/Height.
+    // This keeps the drawing buffer matched to what's on screen, avoiding the stretched ball caused by
+    // scrollbar width and the mobile URL-bar (where CSS 100vh != window.innerHeight).
+    var w = canvas.clientWidth || window.innerWidth;
+    var h = canvas.clientHeight || window.innerHeight;
+    lastW=w; lastH=h;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+    renderer.setSize(w,h,false);
+    camera.aspect = w/h; camera.updateProjectionMatrix();
     RS = clampn(camera.aspect/1.78, 0.32, 1.12);   // <1 on portrait: shrinks the whole bank so it stays in frame & proportional to the vw-scaled wordmark
     RSd= clampn(camera.aspect/1.78, 0.72, 1.12);   // descent ball stays prominent on narrow screens
   }
@@ -105,6 +115,9 @@
   var t0=null, lastY=0, spin=0;
   function frame(ts){
     requestAnimationFrame(frame);
+    // keep the canvas matched to its displayed size every frame (fixes stretch on first paint,
+    // device rotation, and the mobile URL-bar collapsing on the first scroll)
+    if(canvas.clientWidth && (canvas.clientWidth!==lastW || canvas.clientHeight!==lastH)) resize();
     var nm=document.body.classList.contains('no-motion');
     var V=window.innerHeight||1;
     var f=(window.scrollY||0)/V;     // scroll in viewport-heights (beats are absolute, not runway-relative)

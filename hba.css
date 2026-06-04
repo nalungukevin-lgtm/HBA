@@ -1007,3 +1007,25 @@ body.flat .dash,body.flat .badge{backdrop-filter:none;-webkit-backdrop-filter:no
 /* roster player cut-out placeholder sits inside .pfig (transparent so scrim/number read through) */
 .img-ph--player{background:transparent;border:1px dashed var(--line-2);border-radius:12px}
 .img-ph--player .ph-sub{opacity:.7}
+
+/* =====================================================================
+   SHORT-VIEWPORT HERO FIT (laptops ≤900px tall)
+   The glass dashboard is bottom-aligned; on shorter screens its top row
+   (logo + nav) was clipping off the top. Tighten spacing just here so the
+   whole dashboard fits. Tall desktop monitors keep the original design.
+   ===================================================================== */
+@media (max-height:900px){
+  .hero{padding:40px 0 2.4vh}
+  .dash{padding:13px 20px 15px}
+  .dash-top{padding-bottom:12px;margin-bottom:13px}
+  .dash-main h1{font-size:clamp(26px,2.9vw,38px);margin-bottom:9px}
+  .dash-main .lead{margin-bottom:14px;line-height:1.5}
+  .dash-main .cta-row .btn{padding:11px 17px}
+  .dash-trust{margin-top:13px;padding-top:11px}
+  .dash-side{gap:9px}
+  .dash-side .badge{padding:12px 14px}
+}
+@media (max-height:760px){
+  .hero{padding:28px 0 1.6vh}
+  .dash-main .lead{display:none}            /* drop the paragraph on very short screens to guarantee fit */
+}
