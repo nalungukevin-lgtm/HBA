@@ -1032,3 +1032,12 @@ body.flat .dash,body.flat .badge{backdrop-filter:none;-webkit-backdrop-filter:no
 
 /* founder portrait photo — fills the framed slot under the caption overlay */
 .founder-photo .founder-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block}
+
+/* featured event (Summer Camp) spans the full events grid + groups its actions */
+.ev-grid .ev-feature{grid-column:1 / -1}
+.ev-feature .ev-tag{color:var(--accent);border-color:var(--accent-soft);background:rgba(255,106,44,.08)}
+.ev-acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:560px){
+  .ev-acts{width:100%;justify-content:stretch}
+  .ev-acts .btn{flex:1;justify-content:center}
+}
