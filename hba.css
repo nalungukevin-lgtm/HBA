@@ -1044,5 +1044,5 @@ body.flat .dash,body.flat .badge{backdrop-filter:none;-webkit-backdrop-filter:no
 
 /* roster: real photo cards (full-bleed cover, name over scrim) */
 .player--photo .pfig-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;z-index:1;display:block}
-.player--photo .pscrim{height:70%}
+.player--photo .pscrim{height:46%}
 .player--photo .ppos{color:var(--accent)}
